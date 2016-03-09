@@ -10,7 +10,7 @@ client, buf = server.accept()
 while 1:
     buf = client.recv(buflen)
     if not buf:break
-    cmd=buf.decode('utf8')
+    cmd=buf[1]
     print "CMD=",cmd
     client.send("ack".encode('utf8'))
 client.close()
