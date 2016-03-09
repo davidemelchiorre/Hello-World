@@ -1,15 +1,17 @@
 import socket
 
-HOST = ''
-PORT = 9696
-s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-s.bind((HOST, PORT))
-s.listen(1)
-conn, addr = s.accept()
-print "Connected by", addr
+addr = ''
+port = 9696
+buflen=1024
+
+server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+server.bind((addr, port))
+server.listen(1)
+conn, buf = server.accept()
 while 1:
-    data = conn.recv(1024)
-    if not data:break
-    print"Ricevuto:",data.decode('utf-8')
-    conn.send(data)
+    buf = conn.recv(buflen)
+    if not buf:break
+    cmd=data.decode('utf8')
+    print("CMD=",cmd)
+    conn.send("ack".encode('utf8'))
 conn.close()
