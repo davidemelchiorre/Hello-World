@@ -9,7 +9,7 @@ buflen=1024
 print "A"
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 print "B"
-server.bind(("192.168.99.100", port))
+server.bind(("0.0.0.0", port))
 print "C"
 server.listen(1)
 print "D"
