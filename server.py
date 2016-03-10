@@ -14,7 +14,7 @@ server.listen(1)
 print "D"
 while 1:
     print "In attesa di connessione..."
-    client, buf = server.accept()
+    
     print "E"
-client.close()
+
 server.close()
