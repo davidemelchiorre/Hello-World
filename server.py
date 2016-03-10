@@ -1,5 +1,7 @@
 import socket
 
+print "ZERO"
+
 port = 9696
 buflen=1024
 
