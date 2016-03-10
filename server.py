@@ -1,20 +1,13 @@
 import socket
 
-print "ZERO"
-
-
+host=''
 port = 9696
 buflen=1024
 
-print "A"
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-print "B"
-server.bind(("0.0.0.0", port))
-print "C"
+server.bind((host, port))
 server.listen(1)
-print "D"
 while 1:
-    print "In attesa di connessione..."
     client, buf = server.accept()
     #-------------------------
     buf = client.recv(buflen)
