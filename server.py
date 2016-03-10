@@ -1,4 +1,4 @@
-from socket import*
+
 
 host=''
 port = 9696
