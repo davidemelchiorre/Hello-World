@@ -7,6 +7,7 @@ server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server.bind((socket.gethostname(), port))
 server.listen(1)
 while 1:
+    print "In attesa di connessione..."
     client, buf = server.accept()
     #-------------------------
     buf = client.recv(buflen)
