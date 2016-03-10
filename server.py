@@ -1,11 +1,10 @@
 import socket
 
-host=''
 port = 9696
 buflen=1024
 
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-server.bind((host, port))
+server.bind((socket.gethostname(), port))
 server.listen(1)
 while 1:
     client, buf = server.accept()
