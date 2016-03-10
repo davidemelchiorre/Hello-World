@@ -7,8 +7,24 @@ buflen=1024
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server.bind((host, port))
 server.listen(1)
-client, buf = server.accept()
-buf = client.recv(buflen)
-cmd=buf.decode('utf-8')
-print cmd
+while 1:
+    client, buf = server.accept()
+    #-------------------------
+    buf = client.recv(buflen)
+    if not buf:break
+    cmd=buf.decode('utf-8')
+    client.send(bytes(0))
+    #--------------------------
+    buf = client.recv(buflen)
+    if not buf:break
+    arg=buf.decode('utf-8')
+    client.send(bytes(0))
+    #--------------------------
+    print cmd," ",arg
+    if cmd=="close" and arg=="socket":
+        client.close()
+        server.close()
+    if cmd=="close" and arg=="client":
+        client.close()
 client.close()
+server.close()
