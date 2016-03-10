@@ -1,4 +1,4 @@
-import socket
+from socket import*
 
 host=''
 port = 9696
@@ -20,7 +20,7 @@ while 1:
     arg=buf.decode('utf-8')
     client.send(bytes(0))
     #--------------------------
-    print (cmd," ",arg)
+    print cmd," ",arg
     if cmd=="close" and arg=="socket":
         client.close()
         server.close()
