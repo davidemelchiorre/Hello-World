@@ -1,13 +1,15 @@
 import subprocess
+print "Starting Cli Interface..."
+print "Press CTRL+C to terminate"
 print ""
-print("-------------------------Cli Interface-------------------------")
-print("_______________________________________________________________")
+print "-------------------------Cli Interface-------------------------"
+print ""
 while 1:
     comando = raw_input(">")
 
     if comando=="start":
         print ""
-        print("-----------------Start routine-----------------")
+        print "-----------------Start routine-----------------"
         try:
             if proc is None:
                 print("Info>> Starting program...")
@@ -17,12 +19,12 @@ while 1:
         except NameError:
             print("Info>> Starting program...")
             proc=subprocess.Popen(["jupyter","notebook"])
-        print("-----------------------------------------------")
+        print "-----------------------------------------------"
         print ""
   
     if comando=="stop":
         print ""
-        print("-----------------Stop routine------------------")
+        print "-----------------Stop routine------------------"
         try:
             if proc is not None:
                 print(proc)
@@ -33,5 +35,5 @@ while 1:
                 print("Info>> Program is not running")
         except NameError:
             print("Info>> Program is not running")
-        print("-----------------------------------------------")
+        print "-----------------------------------------------"
         print ""
