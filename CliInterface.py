@@ -1,10 +1,12 @@
 import subprocess
-
+print ""
+print("-------------------------Cli Interface-------------------------")
+print("_______________________________________________________________")
 while 1:
     comando = raw_input(">")
 
     if comando=="start":
-        print()
+        print ""
         print("-----------------Start routine-----------------")
         try:
             if proc is None:
@@ -16,10 +18,10 @@ while 1:
             print("Info>> Starting program...")
             proc=subprocess.Popen(["jupyter","notebook"])
         print("-----------------------------------------------")
-        print()
+        print ""
   
     if comando=="stop":
-        print()
+        print ""
         print("-----------------Stop routine------------------")
         try:
             if proc is not None:
@@ -32,4 +34,4 @@ while 1:
         except NameError:
             print("Info>> Program is not running")
         print("-----------------------------------------------")
-        print()
+        print ""
