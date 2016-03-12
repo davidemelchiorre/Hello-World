@@ -1,7 +1,7 @@
 import subprocess
 
 while 1:
-    comando = input(">")
+    comando = raw_input(">")
 
     if comando=="start":
         print()
